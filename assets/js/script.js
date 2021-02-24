@@ -13,6 +13,16 @@ saveBtnEl.on("click", function() {
     localStorage.setItem(storageKey, JSON.stringify(input));
 });
 
+// load data from Local Storage when user comes back to this site
+$("#hour-9 textarea").val(JSON.parse(localStorage.getItem("hour-9")));
+$("#hour-10 textarea").val(JSON.parse(localStorage.getItem("hour-10")));
+$("#hour-11 textarea").val(JSON.parse(localStorage.getItem("hour-11")));
+$("#hour-12 textarea").val(JSON.parse(localStorage.getItem("hour-12")));
+$("#hour-1 textarea").val(JSON.parse(localStorage.getItem("hour-1")));
+$("#hour-2 textarea").val(JSON.parse(localStorage.getItem("hour-2")));
+$("#hour-3 textarea").val(JSON.parse(localStorage.getItem("hour-3")));
+$("#hour-4 textarea").val(JSON.parse(localStorage.getItem("hour-4")));
+$("#hour-5 textarea").val(JSON.parse(localStorage.getItem("hour-5")));
 
 
 
