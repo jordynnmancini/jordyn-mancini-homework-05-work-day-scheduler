@@ -4,7 +4,7 @@ const currentDayEl = $("#currentDay");
 var currentDay = moment().format("MMMM Do YYYY"); 
 currentDayEl.text(currentDay); 
 
-// save input to local storage 
+// save input in time blocks to Local Storage 
 const saveBtnEl = $(".saveBtn"); 
 
 saveBtnEl.on("click", function() {
@@ -13,18 +13,32 @@ saveBtnEl.on("click", function() {
     localStorage.setItem(storageKey, JSON.stringify(input));
 });
 
-// load data from Local Storage when user comes back to this site
+// load data from Local Storage when user comes back to this site & show in the corresponding time block
 $("#hour-9 textarea").val(JSON.parse(localStorage.getItem("hour-9")));
 $("#hour-10 textarea").val(JSON.parse(localStorage.getItem("hour-10")));
 $("#hour-11 textarea").val(JSON.parse(localStorage.getItem("hour-11")));
 $("#hour-12 textarea").val(JSON.parse(localStorage.getItem("hour-12")));
-$("#hour-1 textarea").val(JSON.parse(localStorage.getItem("hour-1")));
-$("#hour-2 textarea").val(JSON.parse(localStorage.getItem("hour-2")));
-$("#hour-3 textarea").val(JSON.parse(localStorage.getItem("hour-3")));
-$("#hour-4 textarea").val(JSON.parse(localStorage.getItem("hour-4")));
-$("#hour-5 textarea").val(JSON.parse(localStorage.getItem("hour-5")));
+$("#hour-13 textarea").val(JSON.parse(localStorage.getItem("hour-13")));
+$("#hour-14 textarea").val(JSON.parse(localStorage.getItem("hour-14")));
+$("#hour-15 textarea").val(JSON.parse(localStorage.getItem("hour-15")));
+$("#hour-16 textarea").val(JSON.parse(localStorage.getItem("hour-16")));
+$("#hour-17 textarea").val(JSON.parse(localStorage.getItem("hour-17")));
 
+// color code time blocks based on time of day 
+var currentHour = moment().hours(); 
 
+$(".time-block").each(function() {
+    var blockHour = parseInt($(this).attr("id").split("-")[1]);
+
+    if(currentHour < blockHour) {
+        $(this).addClass("future"); 
+
+    } else if(currentHour > blockHour) {
+        $(this).addClass("past");
+    } else {
+        $(this).addClass("present"); 
+    }
+});
 
 
 
