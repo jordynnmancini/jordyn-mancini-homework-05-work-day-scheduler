@@ -11,6 +11,7 @@ saveBtnEl.on("click", function() {
     var input = $(this).siblings("textarea").val(); 
     var storageKey = $(this).parent().attr("id"); 
     localStorage.setItem(storageKey, JSON.stringify(input));
+    
 });
 
 // load data from Local Storage when user comes back to this site & show in the corresponding time block

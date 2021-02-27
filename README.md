@@ -12,4 +12,7 @@ The starter code consisted of HTML and CSS, and I started by adding divs to the 
 
 ## Demonstration 
 
+This screen recording was taken at 12:35pm on February 27th. As you can see, the blocks of time before 12pm are grey to show they were in the past, 12pm is red to show present, and the future time blocks are green. 
+![work day caledar, screen recording taken at 12:435pm & color coding reflects as such](./assets/images/exampleGif.gif)
+
 
